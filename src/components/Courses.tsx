@@ -1,5 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Award, BookOpen, CheckCircle, TrendingUp } from "lucide-react";
+import { Award, BookOpen, CheckCircle, TrendingUp, Wrench, Users, ShieldCheck } from "lucide-react";
+import oficinaImg from "@/assets/oficina.jpg";
 
 const courses = [
   { title: "Manutenção de Equipamentos Móveis", desc: "Curso completo com foco em manutenção preventiva e corretiva de escavadeiras, pás carregadeiras, retroescavadeiras e outros equipamentos." },
@@ -13,6 +14,12 @@ const benefits = [
   { icon: Award, text: "Certificação reconhecida pelo mercado" },
   { icon: BookOpen, text: "Conteúdo prático e atualizado" },
   { icon: TrendingUp, text: "Alta empregabilidade para profissionais capacitados" },
+];
+
+const structurePoints = [
+  { icon: Wrench, text: "Oficina equipada com bancadas, ferramentas e componentes reais para prática intensiva" },
+  { icon: Users, text: "Instrutores com décadas de experiência em campo e ambiente industrial" },
+  { icon: ShieldCheck, text: "Ambiente seguro, organizado e em conformidade com normas técnicas" },
 ];
 
 const Courses = () => {
@@ -30,8 +37,26 @@ const Courses = () => {
           </h2>
         </div>
 
-        <div className={`grid lg:grid-cols-3 gap-8 ${visible ? "animate-fade-up delay-200" : "opacity-0"}`}>
-          {/* Courses list */}
+        {/* Video highlight */}
+        <div className={`mb-16 ${visible ? "animate-fade-up delay-100" : "opacity-0"}`}>
+          <div className="relative rounded-sm overflow-hidden border border-surface-dark-foreground/10 aspect-video max-w-4xl mx-auto shadow-2xl">
+            <video
+              className="w-full h-full object-cover"
+              controls
+              preload="metadata"
+              poster=""
+            >
+              <source src="/videos/treinamento-1.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeos.
+            </video>
+          </div>
+          <p className="text-center text-sm text-surface-dark-foreground/50 mt-4">
+            Veja na prática como são nossos treinamentos
+          </p>
+        </div>
+
+        {/* Courses list + Benefits */}
+        <div className={`grid lg:grid-cols-3 gap-8 mb-20 ${visible ? "animate-fade-up delay-200" : "opacity-0"}`}>
           <div className="lg:col-span-2 space-y-4">
             {courses.map((course, i) => (
               <div
@@ -51,7 +76,6 @@ const Courses = () => {
             ))}
           </div>
 
-          {/* Benefits + CTA */}
           <div className="space-y-6">
             <div className="bg-primary/10 border border-primary/20 p-8 rounded-sm space-y-6">
               <h3 className="font-display font-bold text-xl uppercase tracking-wide">Por que estudar na TREMA?</h3>
@@ -72,6 +96,52 @@ const Courses = () => {
             >
               Quero me inscrever
             </a>
+          </div>
+        </div>
+
+        {/* Estrutura para Treinamento */}
+        <div className={visible ? "animate-fade-up delay-400" : "opacity-0"}>
+          <div className="border-t border-surface-dark-foreground/10 pt-16">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
+              <div className="relative rounded-sm overflow-hidden border border-surface-dark-foreground/10 shadow-xl">
+                <img
+                  src={oficinaImg}
+                  alt="Oficina e estrutura de treinamento da TREMA"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-primary">
+                    Nossa Estrutura
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-balance leading-tight">
+                    Estrutura para Treinamento e Prática
+                  </h3>
+                </div>
+                <p className="text-surface-dark-foreground/70 leading-relaxed text-pretty">
+                  Na TREMA, os treinamentos acontecem em um ambiente técnico real, com oficina própria
+                  totalmente equipada. Nossos alunos aprendem com os mesmos equipamentos, ferramentas
+                  e componentes utilizados no dia a dia da manutenção de máquinas pesadas — garantindo
+                  uma formação prática, imersiva e alinhada com as exigências do mercado.
+                </p>
+                <p className="text-surface-dark-foreground/70 leading-relaxed text-pretty">
+                  São mais de 35 anos de experiência traduzidos em uma infraestrutura pensada
+                  para formar profissionais prontos para atuar com segurança e eficiência.
+                </p>
+
+                <ul className="space-y-4 pt-2">
+                  {structurePoints.map((item) => (
+                    <li key={item.text} className="flex items-start gap-3">
+                      <item.icon className="text-primary flex-shrink-0 mt-0.5" size={20} />
+                      <span className="text-sm text-surface-dark-foreground/80">{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
