@@ -1,32 +1,36 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => (
   <footer className="bg-surface-dark text-surface-dark-foreground border-t border-primary/20">
     <div className="container py-12">
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* Brand */}
         <div className="space-y-4">
-          <span className="font-display text-2xl font-bold text-primary tracking-wider">TREMA</span>
+          <Link to="/" className="font-display text-2xl font-bold text-primary tracking-wider">TREMA</Link>
           <p className="text-sm text-surface-dark-foreground/60 leading-relaxed">
             Treinamento e Manutenção em Equipamentos Móveis. Desde 1988 formando profissionais de excelência.
           </p>
         </div>
 
-        {/* Links */}
         <div className="space-y-4">
           <h4 className="font-display font-semibold uppercase tracking-wide text-sm">Navegação</h4>
           <ul className="space-y-2">
-            {["Home", "Sobre", "Serviços", "Produtos", "Cursos", "Contato"].map((l) => (
-              <li key={l}>
-                <a href={`#${l.toLowerCase()}`} className="text-sm text-surface-dark-foreground/60 hover:text-primary transition-colors">
-                  {l}
-                </a>
+            {[
+              { to: "/", label: "Início" },
+              { to: "/sobre", label: "Sobre" },
+              { to: "/cursos", label: "Cursos" },
+              { to: "/produtos", label: "Produtos" },
+              { to: "/contato", label: "Contato" },
+            ].map((l) => (
+              <li key={l.to}>
+                <Link to={l.to} className="text-sm text-surface-dark-foreground/60 hover:text-primary transition-colors">
+                  {l.label}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Services */}
         <div className="space-y-4">
           <h4 className="font-display font-semibold uppercase tracking-wide text-sm">Serviços</h4>
           <ul className="space-y-2 text-sm text-surface-dark-foreground/60">
@@ -37,7 +41,6 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* Contact */}
         <div className="space-y-4">
           <h4 className="font-display font-semibold uppercase tracking-wide text-sm">Contato</h4>
           <ul className="space-y-3 text-sm text-surface-dark-foreground/60">
