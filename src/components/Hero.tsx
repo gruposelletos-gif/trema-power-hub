@@ -1,9 +1,10 @@
 import heroBg from "@/assets/hero-bg.jpg";
 import { ChevronRight, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img
@@ -34,18 +35,18 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 animate-fade-up delay-300">
-            <a
-              href="#cursos"
+            <Link
+              to="/cursos"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-primary-foreground font-semibold text-sm uppercase tracking-wide rounded-sm hover:brightness-110 active:scale-[0.97] transition-all duration-200"
             >
               Ver Cursos <ChevronRight size={16} />
-            </a>
-            <a
-              href="#produtos"
+            </Link>
+            <Link
+              to="/produtos"
               className="inline-flex items-center gap-2 px-6 py-3.5 border-2 border-surface-dark-foreground/30 text-surface-dark-foreground font-semibold text-sm uppercase tracking-wide rounded-sm hover:border-primary hover:text-primary active:scale-[0.97] transition-all duration-200"
             >
               Ver Produtos
-            </a>
+            </Link>
             <a
               href="https://wa.me/5511999999999"
               target="_blank"

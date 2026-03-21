@@ -1,35 +1,40 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#produtos", label: "Produtos" },
-  { href: "#cursos", label: "Cursos" },
-  { href: "#contato", label: "Contato" },
+  { to: "/", label: "Início" },
+  { to: "/sobre", label: "Sobre" },
+  { to: "/cursos", label: "Cursos" },
+  { to: "/produtos", label: "Produtos" },
+  { to: "/contato", label: "Contato" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-surface-dark/95 backdrop-blur-sm border-b border-primary/20">
       <div className="container flex items-center justify-between h-16">
-        <a href="#home" className="font-display text-2xl font-bold text-primary tracking-wider">
+        <Link to="/" className="font-display text-2xl font-bold text-primary tracking-wider">
           TREMA
-        </a>
+        </Link>
 
         {/* Desktop */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm font-medium text-surface-dark-foreground/80 hover:text-primary transition-colors duration-200 uppercase tracking-wide"
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                className={`text-sm font-medium uppercase tracking-wide transition-colors duration-200 ${
+                  pathname === link.to
+                    ? "text-primary"
+                    : "text-surface-dark-foreground/80 hover:text-primary"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -49,14 +54,18 @@ const Navbar = () => {
         <div className="md:hidden bg-surface-dark border-t border-primary/20 animate-fade-in">
           <ul className="flex flex-col py-4">
             {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
+              <li key={link.to}>
+                <Link
+                  to={link.to}
                   onClick={() => setOpen(false)}
-                  className="block px-6 py-3 text-sm font-medium text-surface-dark-foreground/80 hover:text-primary hover:bg-primary/5 transition-colors uppercase tracking-wide"
+                  className={`block px-6 py-3 text-sm font-medium uppercase tracking-wide transition-colors ${
+                    pathname === link.to
+                      ? "text-primary bg-primary/5"
+                      : "text-surface-dark-foreground/80 hover:text-primary hover:bg-primary/5"
+                  }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
