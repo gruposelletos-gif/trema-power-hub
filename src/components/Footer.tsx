@@ -74,8 +74,13 @@ const Footer = () => (
       </div>
     </div>
     <div className="border-t border-surface-dark-foreground/10 py-6">
-      <div className="container text-center text-xs text-surface-dark-foreground/40">
-        © {new Date().getFullYear()} TREMA – Treinamento e Manutenção em Equipamentos Móveis. Todos os direitos reservados.
+      <div className="container text-center text-xs text-surface-dark-foreground/40 space-y-1">
+        <p>© {new Date().getFullYear()} TREMA – Treinamento e Manutenção em Equipamentos Móveis. Todos os direitos reservados.</p>
+        <p>Criado por{" "}
+          <a href="https://selletos.com.br" target="_blank" rel="noopener noreferrer" className="text-surface-dark-foreground/60 hover:text-primary transition-colors underline underline-offset-2">
+            selletos.com.br
+          </a>
+        </p>
       </div>
     </div>
   </footer>
