@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => (
@@ -44,9 +44,31 @@ const Footer = () => (
         <div className="space-y-4">
           <h4 className="font-display font-semibold uppercase tracking-wide text-sm">Contato</h4>
           <ul className="space-y-3 text-sm text-surface-dark-foreground/60">
-            <li className="flex items-center gap-2"><Phone size={14} className="text-primary" /> (11) 4555-1234</li>
-            <li className="flex items-center gap-2"><Mail size={14} className="text-primary" /> contato@trema.com.br</li>
-            <li className="flex items-start gap-2"><MapPin size={14} className="text-primary mt-0.5" /> Rua Industrial, 450 – SP</li>
+            <li>
+              <a href="tel:+553133344311" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Phone size={14} className="text-primary" /> (31) 3334-4311
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/5531993091735" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <MessageCircle size={14} className="text-primary" /> (31) 9 9309-1735
+              </a>
+            </li>
+            <li>
+              <a href="mailto:trema@treamt.com.br" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Mail size={14} className="text-primary" /> trema@treamt.com.br
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/trema.treinamento.manutencao" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Instagram size={14} className="text-primary" /> @trema.treinamento.manutencao
+              </a>
+            </li>
+            <li>
+              <a href="https://www.google.com/maps/search/?api=1&query=Rua+Em%C3%ADlia+Silva+Freitas+360+Novo+Eldorado+Contagem+MG" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 hover:text-primary transition-colors">
+                <MapPin size={14} className="text-primary mt-0.5" /> Rua Emília Silva Freitas, 360 – Contagem/MG
+              </a>
+            </li>
           </ul>
         </div>
       </div>

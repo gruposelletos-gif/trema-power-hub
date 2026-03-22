@@ -43,8 +43,11 @@ const Courses = () => {
             <video
               className="w-full h-full object-cover"
               controls
-              preload="metadata"
-              poster=""
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
             >
               <source src="/videos/treinamento-1.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.
