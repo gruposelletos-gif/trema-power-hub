@@ -1,6 +1,15 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { ExternalLink, Instagram, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { useState } from "react";
+
+const PHONE = "(31) 3334-4311";
+const WHATSAPP = "(31) 9 9309-1735";
+const WHATSAPP_LINK = "https://wa.me/5531993091735";
+const EMAIL = "trema@treamt.com.br";
+const INSTAGRAM = "@trema.treinamento.manutencao";
+const INSTAGRAM_LINK = "https://instagram.com/trema.treinamento.manutencao";
+const ADDRESS = "Rua Emília Silva Freitas, 360, Novo Eldorado, Contagem/MG, CEP: 32.341-500";
+const MAPS_LINK = "https://www.google.com/maps/search/?api=1&query=Rua+Em%C3%ADlia+Silva+Freitas+360+Novo+Eldorado+Contagem+MG";
 
 const Contact = () => {
   const { ref, visible } = useScrollReveal();
@@ -31,42 +40,51 @@ const Contact = () => {
               Entre em contato para solicitar orçamentos, tirar dúvidas sobre cursos ou agendar uma visita técnica. Nossa equipe está pronta para atendê-lo.
             </p>
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0">
+              <a href={`tel:+553133344311`} className="flex items-start gap-4 group">
+                <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                   <Phone className="text-primary" size={18} />
                 </div>
                 <div>
                   <p className="font-semibold text-sm">Telefone</p>
-                  <p className="text-muted-foreground text-sm">(11) 4555-1234</p>
+                  <p className="text-muted-foreground text-sm group-hover:text-primary transition-colors">{PHONE}</p>
                 </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0">
+              </a>
+              <a href={`${WHATSAPP_LINK}?text=Olá! Gostaria de mais informações.`} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+                <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                   <MessageCircle className="text-primary" size={18} />
                 </div>
                 <div>
                   <p className="font-semibold text-sm">WhatsApp</p>
-                  <p className="text-muted-foreground text-sm">(11) 99999-9999</p>
+                  <p className="text-muted-foreground text-sm group-hover:text-primary transition-colors">{WHATSAPP}</p>
                 </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0">
+              </a>
+              <a href={`mailto:${EMAIL}`} className="flex items-start gap-4 group">
+                <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                   <Mail className="text-primary" size={18} />
                 </div>
                 <div>
                   <p className="font-semibold text-sm">E-mail</p>
-                  <p className="text-muted-foreground text-sm">contato@trema.com.br</p>
+                  <p className="text-muted-foreground text-sm group-hover:text-primary transition-colors">{EMAIL}</p>
                 </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0">
+              </a>
+              <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+                <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                  <Instagram className="text-primary" size={18} />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Instagram</p>
+                  <p className="text-muted-foreground text-sm group-hover:text-primary transition-colors">{INSTAGRAM}</p>
+                </div>
+              </a>
+              <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+                <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                   <MapPin className="text-primary" size={18} />
                 </div>
                 <div>
                   <p className="font-semibold text-sm">Endereço</p>
-                  <p className="text-muted-foreground text-sm">Rua Industrial, 450 – São Paulo, SP</p>
+                  <p className="text-muted-foreground text-sm group-hover:text-primary transition-colors">{ADDRESS}</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -110,7 +128,7 @@ const Contact = () => {
                   type="tel"
                   maxLength={20}
                   className="w-full px-4 py-3 bg-card border border-border rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow"
-                  placeholder="(11) 99999-9999"
+                  placeholder="(31) 99999-9999"
                 />
               </div>
             </div>
