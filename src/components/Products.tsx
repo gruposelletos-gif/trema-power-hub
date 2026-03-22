@@ -1,15 +1,94 @@
+import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
+
+import kitDigital1 from "@/assets/products/kit-digital-1.jpg";
+import adaptadores1 from "@/assets/products/adaptadores-1.jpg";
+import kitAnalogicoOficina from "@/assets/products/kit-analogico-oficina.jpg";
+import kitFlowmeter from "@/assets/products/kit-flowmeter.jpg";
+import kitAnalogicoPar from "@/assets/products/kit-analogico-par.jpg";
+import kitsMultiplos from "@/assets/products/kits-multiplos.jpg";
+import kitSuperUtil from "@/assets/products/kit-super-util.jpg";
+import adaptadores2 from "@/assets/products/adaptadores-2.jpg";
 
 const products = [
-  { name: "Kits com Manômetros Digitais e Analógicos", desc: "Conjuntos completos para medição de pressão em sistemas hidráulicos e pneumáticos." },
-  { name: "Kit Turbo – Lubrificação de Turbos", desc: "Ferramenta especializada para teste e lubrificação de turbocompressores." },
-  { name: "Kit Flowmeter com Sensores", desc: "Medidor de vazão com sensores integrados para diagnóstico preciso de circuitos." },
-  { name: "Kit Diagnóstico Common Rail", desc: "Equipamento completo para teste de sistemas Common Rail de injeção diesel." },
-  { name: "Ferramentas para Ar Condicionado", desc: "Ferramentas específicas para manutenção de sistemas de climatização veicular." },
-  { name: "Sensores e Equipamentos de Medição", desc: "Sensores de temperatura, pressão e rotação para análise técnica avançada." },
-  { name: "Vedações e Peças em Geral", desc: "Linha completa de vedações, o-rings, retentores e componentes de reposição." },
+  {
+    name: "Kit Super Útil",
+    desc: "Com o 'KIT SUPER ÚTIL' as tomadas de pressões hidráulicas são feitas de forma fácil e segura.",
+    images: [kitSuperUtil, kitAnalogicoOficina],
+  },
+  {
+    name: "Kit Digital para Tomadas de Pressões Hidráulicas",
+    desc: "Kit composto por manômetro digital, microtubos para alta pressão e adaptadores diversos.",
+    images: [kitDigital1, kitAnalogicoPar, kitsMultiplos],
+  },
+  {
+    name: "Kit Turbo de Lubrificação",
+    desc: "O Kit Turbo de lubrificação prolonga a vida útil em até 5 vezes os turbos compressores equipados nos motores térmicos.",
+    images: [kitFlowmeter],
+  },
+  {
+    name: "Vedações em Geral",
+    desc: "Retentores, anéis o'ring em borracha nitrílica, viton, silicone, neoprene, teflon e outros.",
+    images: [adaptadores1, adaptadores2],
+  },
+  {
+    name: "Manômetro R134a com Engates Rápidos",
+    desc: "Conjunto completo, incluindo bloco manifold, 1 manômetro de alta pressão, 1 manômetro de baixa pressão, 3 mangueiras com 1,5 metros cada, 1 engate rápido para alta pressão, 1 engate rápido para baixa pressão e 1 maleta para acomodação.",
+    images: [kitAnalogicoPar, kitAnalogicoOficina],
+  },
+  {
+    name: "Refrigerante R134a",
+    desc: "Botija de gás R134a 13,6 kg.",
+    images: [kitsMultiplos],
+  },
 ];
+
+function ImageGallery({ images, name }: { images: string[]; name: string }) {
+  const [current, setCurrent] = useState(0);
+  const hasMultiple = images.length > 1;
+
+  return (
+    <div className="relative aspect-[4/3] bg-muted overflow-hidden">
+      <img
+        src={images[current]}
+        alt={name}
+        className="w-full h-full object-cover transition-opacity duration-500"
+        loading="lazy"
+      />
+      {hasMultiple && (
+        <>
+          <button
+            onClick={() => setCurrent((p) => (p - 1 + images.length) % images.length)}
+            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center shadow-md hover:bg-background transition-colors active:scale-95"
+            aria-label="Foto anterior"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button
+            onClick={() => setCurrent((p) => (p + 1) % images.length)}
+            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center shadow-md hover:bg-background transition-colors active:scale-95"
+            aria-label="Próxima foto"
+          >
+            <ChevronRight size={16} />
+          </button>
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+            {images.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                  i === current ? "bg-primary w-4" : "bg-background/60"
+                }`}
+                aria-label={`Foto ${i + 1}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 const Products = () => {
   const { ref, visible } = useScrollReveal();
@@ -17,35 +96,65 @@ const Products = () => {
   return (
     <section id="produtos" className="py-24 bg-yellow-subtle" ref={ref}>
       <div className="container">
-        <div className={`text-center max-w-2xl mx-auto mb-16 space-y-4 ${visible ? "animate-fade-up" : "opacity-0"}`}>
+        <div
+          className={`text-center max-w-2xl mx-auto mb-16 space-y-4 transition-all duration-700 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          }`}
+        >
           <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-            Produtos
+            Produtos e Kits
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-balance">
-            Peças, kits e ferramentas de diagnóstico
+            Produtos e Kits
           </h2>
-          <p className="text-muted-foreground text-pretty">
-            Equipamentos profissionais para manutenção de máquinas pesadas.
+          <p className="text-muted-foreground text-pretty leading-relaxed">
+            A Trema possui diversos produtos e ferramentas especiais para manutenção em equipamentos móveis e mineração.
           </p>
         </div>
 
-        <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-6 ${visible ? "animate-fade-up delay-200" : "opacity-0"}`}>
-          {products.map((product) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product, index) => (
             <div
               key={product.name}
-              className="bg-background border border-border p-6 rounded-sm space-y-4 hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col"
+              className={`bg-background border border-border rounded-md overflow-hidden flex flex-col shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 ${
+                visible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
+              }`}
+              style={{
+                transitionDelay: visible ? `${150 + index * 80}ms` : "0ms",
+              }}
             >
-              <div className="w-10 h-1 bg-primary rounded-full" />
-              <h4 className="font-display font-semibold text-lg leading-snug">{product.name}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed flex-1">{product.desc}</p>
-              <a
-                href="https://wa.me/5511999999999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline active:scale-[0.97] transition-transform"
-              >
-                <MessageCircle size={14} /> Solicitar orçamento
-              </a>
+              <ImageGallery images={product.images} name={product.name} />
+
+              <div className="p-6 flex flex-col flex-1 space-y-4">
+                <div className="w-10 h-1 bg-primary rounded-full" />
+                <h3 className="font-display font-semibold text-lg leading-snug">
+                  {product.name}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  {product.desc}
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <a
+                    href="https://wa.me/5531993091735?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20o%20produto%20"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-md bg-primary text-primary-foreground px-4 py-2.5 text-sm font-semibold hover:bg-primary/90 active:scale-[0.97] transition-all duration-200"
+                  >
+                    Solicitar orçamento
+                  </a>
+                  <a
+                    href="https://wa.me/5531993091735"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-accent hover:text-accent-foreground active:scale-[0.97] transition-all duration-200"
+                  >
+                    <MessageCircle size={14} /> WhatsApp
+                  </a>
+                </div>
+              </div>
             </div>
           ))}
         </div>
