@@ -108,7 +108,7 @@ const Products = () => {
             Produtos e Kits
           </h2>
           <p className="text-muted-foreground text-pretty leading-relaxed">
-            A Trema possui diversos produtos e ferramentas especiais para manutenção em equipamentos móveis e mineração.
+            A Tremat possui diversos produtos e ferramentas especiais para manutenção em equipamentos móveis e mineração.
           </p>
         </div>
 
