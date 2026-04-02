@@ -2,14 +2,14 @@ import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
-import kitDigital1 from "@/assets/products/kit-digital-1.jpg";
-import adaptadores1 from "@/assets/products/adaptadores-1.jpg";
-import kitAnalogicoOficina from "@/assets/products/kit-analogico-oficina.jpg";
-import kitFlowmeter from "@/assets/products/kit-flowmeter.jpg";
-import kitAnalogicoPar from "@/assets/products/kit-analogico-par.jpg";
-import kitsMultiplos from "@/assets/products/kits-multiplos.jpg";
-import kitSuperUtil from "@/assets/products/kit-super-util.jpg";
-import adaptadores2 from "@/assets/products/adaptadores-2.jpg";
+import img119 from "@/assets/products/new-119.jpg";
+import img119_1 from "@/assets/products/new-119-1.jpg";
+import img120 from "@/assets/products/new-120.jpg";
+import img121 from "@/assets/products/new-121.jpg";
+import img122 from "@/assets/products/new-122.jpg";
+import img126_1 from "@/assets/products/new-126-1.jpg";
+import img127 from "@/assets/products/new-127.jpg";
+import img132 from "@/assets/products/new-132.jpg";
 
 const products = [
   {
