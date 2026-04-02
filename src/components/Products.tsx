@@ -2,45 +2,45 @@ import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
-import kitDigital1 from "@/assets/products/kit-digital-1.jpg";
-import adaptadores1 from "@/assets/products/adaptadores-1.jpg";
-import kitAnalogicoOficina from "@/assets/products/kit-analogico-oficina.jpg";
-import kitFlowmeter from "@/assets/products/kit-flowmeter.jpg";
-import kitAnalogicoPar from "@/assets/products/kit-analogico-par.jpg";
-import kitsMultiplos from "@/assets/products/kits-multiplos.jpg";
-import kitSuperUtil from "@/assets/products/kit-super-util.jpg";
-import adaptadores2 from "@/assets/products/adaptadores-2.jpg";
+import img119 from "@/assets/products/new-119.jpg";
+import img119_1 from "@/assets/products/new-119-1.jpg";
+import img120 from "@/assets/products/new-120.jpg";
+import img121 from "@/assets/products/new-121.jpg";
+import img122 from "@/assets/products/new-122.jpg";
+import img126_1 from "@/assets/products/new-126-1.jpg";
+import img127 from "@/assets/products/new-127.jpg";
+import img132 from "@/assets/products/new-132.jpg";
 
 const products = [
   {
     name: "Kit Super Útil",
     desc: "Com o 'KIT SUPER ÚTIL' as tomadas de pressões hidráulicas são feitas de forma fácil e segura.",
-    images: [kitSuperUtil, kitAnalogicoOficina],
+    images: [img126_1, img127],
   },
   {
     name: "Kit Digital para Tomadas de Pressões Hidráulicas",
     desc: "Kit composto por manômetro digital, microtubos para alta pressão e adaptadores diversos.",
-    images: [kitDigital1, kitAnalogicoPar, kitsMultiplos],
+    images: [img119, img119_1, img120],
   },
   {
     name: "Kit Turbo de Lubrificação",
     desc: "O Kit Turbo de lubrificação prolonga a vida útil em até 5 vezes os turbos compressores equipados nos motores térmicos.",
-    images: [kitFlowmeter],
+    images: [img132],
   },
   {
     name: "Vedações em Geral",
     desc: "Retentores, anéis o'ring em borracha nitrílica, viton, silicone, neoprene, teflon e outros.",
-    images: [adaptadores1, adaptadores2],
+    images: [img122, img121],
   },
   {
     name: "Manômetro R134a com Engates Rápidos",
     desc: "Conjunto completo, incluindo bloco manifold, 1 manômetro de alta pressão, 1 manômetro de baixa pressão, 3 mangueiras com 1,5 metros cada, 1 engate rápido para alta pressão, 1 engate rápido para baixa pressão e 1 maleta para acomodação.",
-    images: [kitAnalogicoPar, kitAnalogicoOficina],
+    images: [img121, img126_1],
   },
   {
     name: "Refrigerante R134a",
     desc: "Botija de gás R134a 13,6 kg.",
-    images: [kitsMultiplos],
+    images: [img127],
   },
 ];
 
