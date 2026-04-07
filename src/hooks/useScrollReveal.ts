@@ -8,30 +8,28 @@ export function useScrollReveal(threshold = 0.1) {
     const el = ref.current;
     if (!el) return;
 
-    // Use requestAnimationFrame to ensure DOM is settled before observing
-    const rafId = requestAnimationFrame(() => {
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            obs.unobserve(el);
-          }
-        },
-        { threshold, rootMargin: "0px 0px -10% 0px" }
-      );
-      obs.observe(el);
+    // Fallback: if IntersectionObserver doesn't fire within 1s, show content
+    const fallbackTimer = setTimeout(() => setVisible(true), 1000);
 
-      // Store observer for cleanup
-      (el as any)._scrollRevealObs = obs;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          clearTimeout(fallbackTimer);
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    // Small delay to ensure DOM is settled
+    requestAnimationFrame(() => {
+      if (ref.current) obs.observe(ref.current);
     });
 
     return () => {
-      cancelAnimationFrame(rafId);
-      const obs = (el as any)?._scrollRevealObs;
-      if (obs) {
-        obs.disconnect();
-        delete (el as any)._scrollRevealObs;
-      }
+      clearTimeout(fallbackTimer);
+      obs.disconnect();
     };
   }, [threshold]);
 
