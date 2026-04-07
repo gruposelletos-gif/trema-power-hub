@@ -26,7 +26,7 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-pretty">
               <p>
-                A TREMAT – Treinamento e Manutenção em Equipamentos Móveis nasceu em 1988 com a missão de capacitar profissionais e oferecer soluções técnicas de alto nível para o setor de máquinas pesadas.
+                A TREMA – Treinamento e Manutenção em Equipamentos Móveis nasceu em 1988 com a missão de capacitar profissionais e oferecer soluções técnicas de alto nível para o setor de máquinas pesadas.
               </p>
               <p>
                 Com mais de três décadas de atuação, nos tornamos referência em formação profissional, diagnóstico de falhas e fornecimento de peças e ferramentas especializadas. Nosso compromisso é entregar excelência, aliando experiência de campo à tecnologia mais recente do mercado.
@@ -42,7 +42,7 @@ const About = () => {
             <div className="relative rounded-sm overflow-hidden shadow-2xl">
               <img
                 src={sedImg}
-                alt="Sede da TREMAT"
+                alt="Sede da TREMA"
                 className="w-full h-80 object-cover"
                 loading="lazy"
               />
