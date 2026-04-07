@@ -26,12 +26,12 @@ const Hero = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight text-surface-dark-foreground animate-fade-up delay-100 text-balance">
-            Treinamento, manutenção e soluções para{" "}
+            Cursos, manutenção e produtos para{" "}
             <span className="text-primary">máquinas pesadas</span>
           </h1>
 
           <p className="text-lg text-surface-dark-foreground/70 max-w-xl animate-fade-up delay-200 text-pretty leading-relaxed">
-            A TREMA atua com cursos técnicos, manutenção especializada e produtos para diagnóstico e operação de equipamentos móveis.
+            A TREMA oferece treinamento técnico, manutenção especializada e venda de kits e ferramentas para máquinas pesadas e equipamentos móveis.
           </p>
 
           <div className="flex flex-wrap gap-4 animate-fade-up delay-300">
