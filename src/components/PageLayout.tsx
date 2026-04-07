@@ -8,7 +8,7 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
 
   return (
