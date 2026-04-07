@@ -81,7 +81,7 @@ const Courses = () => {
 
           <div className="space-y-6">
             <div className="bg-primary/10 border border-primary/20 p-8 rounded-sm space-y-6">
-              <h3 className="font-display font-bold text-xl uppercase tracking-wide">Por que estudar na TREMAT?</h3>
+              <h3 className="font-display font-bold text-xl uppercase tracking-wide">Por que estudar na TREMA?</h3>
               <ul className="space-y-4">
                 {benefits.map((b) => (
                   <li key={b.text} className="flex items-start gap-3">
@@ -109,7 +109,7 @@ const Courses = () => {
               <div className="relative rounded-sm overflow-hidden border border-surface-dark-foreground/10 shadow-xl">
                 <img
                   src={oficinaImg}
-                  alt="Oficina e estrutura de treinamento da TREMAT"
+                  alt="Oficina e estrutura de treinamento da TREMA"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                 />
@@ -125,7 +125,7 @@ const Courses = () => {
                   </h3>
                 </div>
                 <p className="text-surface-dark-foreground/70 leading-relaxed text-pretty">
-                  Na TREMAT, os treinamentos acontecem em um ambiente técnico real, com oficina própria
+                  Na TREMA, os treinamentos acontecem em um ambiente técnico real, com oficina própria
                   totalmente equipada. Nossos alunos aprendem com os mesmos equipamentos, ferramentas
                   e componentes utilizados no dia a dia da manutenção de máquinas pesadas — garantindo
                   uma formação prática, imersiva e alinhada com as exigências do mercado.

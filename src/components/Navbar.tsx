@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-surface-dark/95 backdrop-blur-sm border-b border-primary/20">
       <div className="container flex items-center justify-between h-16">
         <Link to="/" className="font-display text-2xl font-bold text-primary tracking-wider">
-          TREMAT
+          TREMA
         </Link>
 
         {/* Desktop */}

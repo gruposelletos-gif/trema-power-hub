@@ -6,7 +6,7 @@ const Footer = () => (
     <div className="container py-12">
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="space-y-4">
-          <Link to="/" className="font-display text-2xl font-bold text-primary tracking-wider">TREMAT</Link>
+          <Link to="/" className="font-display text-2xl font-bold text-primary tracking-wider">TREMA</Link>
           <p className="text-sm text-surface-dark-foreground/60 leading-relaxed">
             Treinamento e Manutenção em Equipamentos Móveis. Desde 1988 formando profissionais de excelência.
           </p>
@@ -75,7 +75,7 @@ const Footer = () => (
     </div>
     <div className="border-t border-surface-dark-foreground/10 py-6">
       <div className="container text-center text-xs text-surface-dark-foreground/40 space-y-1">
-        <p>© {new Date().getFullYear()} TREMAT – Treinamento e Manutenção em Equipamentos Móveis. Todos os direitos reservados.</p>
+        <p>© {new Date().getFullYear()} TREMA – Treinamento e Manutenção em Equipamentos Móveis. Todos os direitos reservados.</p>
         <p>Criado por{" "}
           <a href="https://selletos.com.br" target="_blank" rel="noopener noreferrer" className="text-surface-dark-foreground/60 hover:text-primary transition-colors underline underline-offset-2">
             selletos.com.br
