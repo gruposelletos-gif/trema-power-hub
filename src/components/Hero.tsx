@@ -1,4 +1,5 @@
 import heroBg from "@/assets/hero-bg.jpg";
+import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 import { ChevronRight, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
