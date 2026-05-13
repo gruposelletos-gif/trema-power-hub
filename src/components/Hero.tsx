@@ -8,12 +8,15 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img
-          src={heroBg}
-          alt="Máquinas pesadas em canteiro de obras"
-          className="w-full h-full object-cover"
-          loading="eager"
-        />
+        <picture>
+          <source media="(max-width: 767px)" srcSet={heroBgMobile} />
+          <img
+            src={heroBg}
+            alt="Máquinas pesadas em canteiro de obras"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+        </picture>
         <div className="absolute inset-0 bg-[hsl(var(--hero-overlay))]/75" />
         <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--hero-overlay))]/90 via-[hsl(var(--hero-overlay))]/60 to-transparent" />
       </div>
