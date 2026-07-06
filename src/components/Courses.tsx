@@ -19,8 +19,8 @@ const courses = [
     image: mecatronicaImg,
   },
   {
-    title: "Ar Condicionado Veicular",
-    desc: "Capacitação em diagnóstico, manutenção e recarga de sistemas de climatização em veículos e máquinas.",
+    title: "Manutenção de Ar Condicionado Automotivo",
+    desc: "Melhor utilização do equipamento. Aumentar sua vida útil. Reduzir os custos com manutenção.",
     image: arCondicionadoImg,
   },
   {
