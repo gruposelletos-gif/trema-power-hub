@@ -6,6 +6,16 @@ import mecatronicaImg from "@/assets/courses/mecatronica.jpg";
 import arCondicionadoImg from "@/assets/courses/ar-condicionado.jpg";
 import operacaoImg from "@/assets/courses/operacao.jpg";
 import cargasImg from "@/assets/courses/cargas.jpg";
+import pontesRolantesImg from "@/assets/courses/pontes-rolantes.jpg";
+import tratorEsteirasImg from "@/assets/courses/trator-esteiras.jpg";
+import carregadeirasImg from "@/assets/courses/carregadeiras.jpg";
+import equipamentosMoveisImg from "@/assets/courses/equipamentos-moveis.jpg";
+import escavadeirasImg from "@/assets/courses/escavadeiras.jpg";
+import caminhoesForaEstradaImg from "@/assets/courses/caminhoes-fora-estrada.jpg";
+import empilhadeirasImg from "@/assets/courses/empilhadeiras.jpg";
+import guindasteGalionImg from "@/assets/courses/guindaste-galion.jpg";
+import metrologiaImg from "@/assets/courses/metrologia.jpg";
+import guindasteImkImg from "@/assets/courses/guindaste-imk.jpg";
 
 const courses = [
   {
@@ -32,6 +42,61 @@ const courses = [
     title: "Movimentação e Amarração de Cargas",
     desc: "Normas, técnicas e procedimentos para transporte e içamento seguro de cargas especiais.",
     image: cargasImg,
+  },
+  {
+    title: "Operação de Pontes Rolantes",
+    desc: "Técnicas de operação de pontes rolantes, objetivando a prevenção de acidentes e de avarias nos equipamentos e cargas.",
+    image: pontesRolantesImg,
+  },
+  {
+    title: "Operação de Trator de Esteiras",
+    desc: "Adequação da técnica de operação para prevenção de acidentes. Aumento da disponibilidade e produtividade.",
+    image: tratorEsteirasImg,
+  },
+  {
+    title: "Operação de Carregadeiras",
+    desc: "Adequação das técnicas de operação às tecnologias recentes implantadas nas carregadeiras de última geração, objetivando menor consumo de combustível sem perda de produtividade.",
+    image: carregadeirasImg,
+  },
+  {
+    title: "Operação de Equipamentos Móveis",
+    desc: "Adequar a técnica de operação à prevenção de acidentes. Aumentar a disponibilidade e produtividade, através da melhor utilização do equipamento.",
+    image: equipamentosMoveisImg,
+  },
+  {
+    title: "Treinamento em Operação de Escavadeiras",
+    desc: "Adequação da técnica de operação para prevenção de acidentes. Aumento da disponibilidade e produtividade, através da melhor utilização do equipamento. Redução dos custos de manutenção.",
+    image: escavadeirasImg,
+  },
+  {
+    title: "Operação de Caminhões Fora de Estrada",
+    desc: "Formar e aperfeiçoar pessoal envolvido na operação dos caminhões fora de estrada.",
+    image: caminhoesForaEstradaImg,
+  },
+  {
+    title: "Iniciação a Mecatronica",
+    desc: "Proporcionar aos participantes conhecimentos básicos de hidráulica, elétrica e eletrônica, capacitando-os a ler e interpretar diagramas e analisar falhas.",
+    image: mecatronicaImg,
+  },
+  {
+    title: "Operação de Empilhadeiras",
+    desc: "Adequar a técnica de operação à prevenção de acidentes. Aumentar a disponibilidade e produtividade, através da melhor utilização dos equipamentos. Reduzir os custos de manutenção.",
+    image: empilhadeirasImg,
+  },
+  {
+    title: "Operação de Guindastes Galion 5T com capacitação nas NR'S 11 e 12.",
+    desc: "Técnicas de operação de guindais e de amarração de cargas, objetivando a prevenção de acidentes e de avarias no equipamento e cargas.",
+    image: guindasteGalionImg,
+  },
+  {
+    title: "Treinamento de pessoal em Metrologia",
+    desc: "O Treinamento em Metrologia aborda os princípios de orientações de medidas utilizando as principais ferramentas do mercado.",
+    image: metrologiaImg,
+  },
+  {
+    title: "Treinamento para operação de guindastes IMK 30 Toneladas com capacitação nas NR'S 11 e 12",
+    desc: "Capacita o operador para a utilização correta do equipamento de engenharia, considerando suas características e procedimentos de operação e segurança.",
+    image: guindasteImkImg,
   },
 ];
 
