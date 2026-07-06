@@ -23,37 +23,53 @@ const maintenance = [
   { icon: Gauge, title: "Suporte Técnico Especializado", desc: "Assistência técnica contínua com equipe qualificada." },
 ];
 
+const Card = ({ item, index }: { item: { icon: any; title: string; desc: string }; index: number }) => (
+  <div
+    className="group relative bg-card border border-border rounded-2xl p-8 space-y-5 hover:border-foreground/80 hover:-translate-y-1 hover:shadow-elevated transition-all duration-500 overflow-hidden"
+    style={{ transitionDelay: `${index * 40}ms` }}
+  >
+    <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-primary/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="relative flex items-center justify-between">
+      <div className="w-14 h-14 rounded-xl bg-foreground/[0.04] group-hover:bg-primary group-hover:text-primary-foreground flex items-center justify-center transition-colors duration-300">
+        <item.icon size={26} />
+      </div>
+      <span className="font-display text-lg text-foreground/25 tabular-nums">{String(index + 1).padStart(2, "0")}</span>
+    </div>
+    <h4 className="font-display text-xl uppercase leading-tight relative">{item.title}</h4>
+    <p className="text-sm text-muted-foreground leading-relaxed relative">{item.desc}</p>
+  </div>
+);
+
 const Services = () => {
   const { ref, visible } = useScrollReveal();
 
   return (
-    <section id="servicos" className="py-24 bg-surface-dark text-surface-dark-foreground" ref={ref}>
-      <div className="container">
-        <div className={`text-center max-w-2xl mx-auto mb-16 space-y-4 ${visible ? "animate-fade-up" : "opacity-0"}`}>
-          <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-            Serviços
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-balance">
-            Soluções completas para o setor de máquinas pesadas
-          </h2>
+    <section id="servicos" className="py-28 lg:py-36 bg-surface-alt relative" ref={ref}>
+      <div className="container-wide">
+        <div className={`grid lg:grid-cols-12 gap-10 mb-20 items-end ${visible ? "animate-fade-up" : "opacity-0"}`}>
+          <div className="lg:col-span-7 space-y-6">
+            <span className="eyebrow">Serviços</span>
+            <h2 className="heading-lg text-balance">
+              Soluções completas para o setor de máquinas pesadas
+            </h2>
+          </div>
+          <div className="lg:col-span-5 lg:pl-10 lg:border-l lg:border-border">
+            <p className="text-muted-foreground leading-relaxed">
+              Atuamos com formação técnica, diagnóstico e suporte especializado — cobrindo toda a jornada de manutenção e operação de equipamentos móveis.
+            </p>
+          </div>
         </div>
 
         {/* Trainings */}
         <div className={`mb-16 ${visible ? "animate-fade-up delay-200" : "opacity-0"}`}>
           <div className="flex items-center gap-3 mb-8">
-            <GraduationCap className="text-primary" size={24} />
-            <h3 className="text-xl font-display font-bold uppercase tracking-wide">Treinamentos</h3>
+            <GraduationCap className="text-primary" size={22} />
+            <h3 className="font-display text-sm uppercase tracking-[0.28em]">Treinamentos</h3>
+            <span className="flex-1 h-px bg-border ml-4" />
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {trainings.map((item) => (
-              <div
-                key={item.title}
-                className="bg-surface-dark-foreground/5 border border-surface-dark-foreground/10 p-6 rounded-sm space-y-3 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
-              >
-                <item.icon className="text-primary" size={28} />
-                <h4 className="font-display font-semibold text-lg">{item.title}</h4>
-                <p className="text-sm text-surface-dark-foreground/60 leading-relaxed">{item.desc}</p>
-              </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {trainings.map((item, i) => (
+              <Card key={item.title} item={item} index={i} />
             ))}
           </div>
         </div>
@@ -61,19 +77,13 @@ const Services = () => {
         {/* Maintenance */}
         <div className={visible ? "animate-fade-up delay-400" : "opacity-0"}>
           <div className="flex items-center gap-3 mb-8">
-            <Cog className="text-primary" size={24} />
-            <h3 className="text-xl font-display font-bold uppercase tracking-wide">Manutenção Técnica</h3>
+            <Cog className="text-primary" size={22} />
+            <h3 className="font-display text-sm uppercase tracking-[0.28em]">Manutenção Técnica</h3>
+            <span className="flex-1 h-px bg-border ml-4" />
           </div>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {maintenance.map((item) => (
-              <div
-                key={item.title}
-                className="bg-surface-dark-foreground/5 border border-surface-dark-foreground/10 p-6 rounded-sm space-y-3 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
-              >
-                <item.icon className="text-primary" size={28} />
-                <h4 className="font-display font-semibold text-lg">{item.title}</h4>
-                <p className="text-sm text-surface-dark-foreground/60 leading-relaxed">{item.desc}</p>
-              </div>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {maintenance.map((item, i) => (
+              <Card key={item.title} item={item} index={i} />
             ))}
           </div>
         </div>
