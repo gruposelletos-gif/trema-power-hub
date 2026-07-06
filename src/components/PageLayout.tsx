@@ -11,10 +11,12 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
 
+  const isHome = pathname === "/";
+
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-16">{children}</main>
+      <main className={`min-h-screen ${isHome ? "" : "pt-20"}`}>{children}</main>
       <Footer />
       <WhatsAppButton />
     </>

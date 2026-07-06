@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Oswald", "sans-serif"],
-        body: ["Inter", "sans-serif"],
+        display: ["'Bebas Neue'", "Impact", "sans-serif"],
+        body: ["Barlow", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -53,6 +53,7 @@ export default {
         },
         "surface-dark": "hsl(var(--surface-dark))",
         "surface-dark-foreground": "hsl(var(--surface-dark-foreground))",
+        "surface-alt": "hsl(var(--surface-alt))",
         "yellow-subtle": "hsl(var(--yellow-subtle))",
       },
       borderRadius: {

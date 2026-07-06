@@ -1,5 +1,5 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Award, BookOpen, CheckCircle, TrendingUp, Wrench, Users, ShieldCheck } from "lucide-react";
+import { Award, BookOpen, TrendingUp, Wrench, Users, ShieldCheck, ArrowRight } from "lucide-react";
 import oficinaImg from "@/assets/oficina.jpg";
 
 const courses = [
@@ -26,20 +26,16 @@ const Courses = () => {
   const { ref, visible } = useScrollReveal();
 
   return (
-    <section id="cursos" className="py-24 bg-surface-dark text-surface-dark-foreground" ref={ref}>
-      <div className="container">
-        <div className={`text-center max-w-2xl mx-auto mb-16 space-y-4 ${visible ? "animate-fade-up" : "opacity-0"}`}>
-          <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-            Cursos
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-balance">
-            Invista na sua capacitação profissional
-          </h2>
+    <section id="cursos" className="py-28 lg:py-36 bg-background" ref={ref}>
+      <div className="container-wide">
+        <div className={`max-w-3xl mb-16 space-y-6 ${visible ? "animate-fade-up" : "opacity-0"}`}>
+          <span className="eyebrow">Cursos</span>
+          <h2 className="heading-lg text-balance">Invista na sua capacitação profissional</h2>
         </div>
 
         {/* Video highlight */}
-        <div className={`mb-16 ${visible ? "animate-fade-up delay-100" : "opacity-0"}`}>
-          <div className="relative rounded-sm overflow-hidden border border-surface-dark-foreground/10 aspect-video max-w-4xl mx-auto shadow-2xl">
+        <div className={`mb-24 ${visible ? "animate-fade-up delay-100" : "opacity-0"}`}>
+          <div className="relative rounded-2xl overflow-hidden aspect-video max-w-5xl mx-auto shadow-elevated">
             <video
               className="w-full h-full object-cover"
               controls
@@ -53,84 +49,81 @@ const Courses = () => {
               Seu navegador não suporta vídeos.
             </video>
           </div>
-          <p className="text-center text-sm text-surface-dark-foreground/50 mt-4">
+          <p className="text-center text-xs uppercase tracking-[0.22em] text-muted-foreground mt-6">
             Veja na prática como são nossos treinamentos
           </p>
         </div>
 
         {/* Courses list + Benefits */}
-        <div className={`grid lg:grid-cols-3 gap-8 mb-20 ${visible ? "animate-fade-up delay-200" : "opacity-0"}`}>
-          <div className="lg:col-span-2 space-y-4">
+        <div className={`grid lg:grid-cols-3 gap-8 mb-28 ${visible ? "animate-fade-up delay-200" : "opacity-0"}`}>
+          <div className="lg:col-span-2 space-y-3">
             {courses.map((course, i) => (
               <div
                 key={course.title}
-                className="bg-surface-dark-foreground/5 border border-surface-dark-foreground/10 p-6 rounded-sm hover:border-primary/40 transition-colors duration-300"
+                className="group bg-card border border-border p-7 rounded-2xl hover:border-foreground hover:shadow-soft transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground font-display font-bold text-sm flex items-center justify-center rounded-sm">
+                <div className="flex items-start gap-5">
+                  <span className="flex-shrink-0 font-display text-3xl text-primary tabular-nums w-14">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <div className="space-y-2">
-                    <h4 className="font-display font-semibold text-lg">{course.title}</h4>
-                    <p className="text-sm text-surface-dark-foreground/60 leading-relaxed">{course.desc}</p>
+                  <div className="space-y-2 flex-1">
+                    <h4 className="font-display text-xl uppercase leading-tight">{course.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{course.desc}</p>
                   </div>
+                  <ArrowRight size={18} className="text-foreground/30 group-hover:text-primary group-hover:translate-x-1 transition-all mt-2" />
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-primary/10 border border-primary/20 p-8 rounded-sm space-y-6">
-              <h3 className="font-display font-bold text-xl uppercase tracking-wide">Por que estudar na TREMA?</h3>
+          <div className="space-y-6 lg:sticky lg:top-28 lg:self-start">
+            <div className="bg-foreground text-background p-8 rounded-2xl space-y-6 shadow-elevated">
+              <h3 className="font-display text-2xl uppercase tracking-wide">Por que estudar na TREMA?</h3>
               <ul className="space-y-4">
                 {benefits.map((b) => (
                   <li key={b.text} className="flex items-start gap-3">
                     <b.icon className="text-primary flex-shrink-0 mt-0.5" size={20} />
-                    <span className="text-sm text-surface-dark-foreground/80">{b.text}</span>
+                    <span className="text-sm text-background/80">{b.text}</span>
                   </li>
                 ))}
               </ul>
+              <a
+                href="https://wa.me/5531993091735?text=Olá! Gostaria de me inscrever em um curso."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center px-6 py-4 bg-primary text-primary-foreground font-semibold text-xs uppercase tracking-[0.2em] rounded-full hover:brightness-105 active:scale-[0.97] transition-all duration-200"
+              >
+                Quero me inscrever
+              </a>
             </div>
-            <a
-              href="https://wa.me/5511999999999?text=Olá! Gostaria de me inscrever em um curso."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full text-center px-6 py-4 bg-primary text-primary-foreground font-semibold text-sm uppercase tracking-wide rounded-sm hover:brightness-110 active:scale-[0.97] transition-all duration-200"
-            >
-              Quero me inscrever
-            </a>
           </div>
         </div>
 
         {/* Estrutura para Treinamento */}
         <div className={visible ? "animate-fade-up delay-400" : "opacity-0"}>
-          <div className="border-t border-surface-dark-foreground/10 pt-16">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div className="relative rounded-sm overflow-hidden border border-surface-dark-foreground/10 shadow-xl">
+          <div className="border-t border-border pt-20">
+            <div className="grid lg:grid-cols-2 gap-14 items-center">
+              <div className="lg:order-2 relative rounded-2xl overflow-hidden shadow-elevated group">
                 <img
                   src={oficinaImg}
                   alt="Oficina e estrutura de treinamento da TREMA"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-[520px] object-cover group-hover:scale-105 transition-transform duration-[1500ms]"
                   loading="lazy"
                 />
               </div>
 
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-                    Nossa Estrutura
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl font-display font-bold tracking-tight text-balance leading-tight">
-                    Estrutura para Treinamento e Prática
-                  </h3>
-                </div>
-                <p className="text-surface-dark-foreground/70 leading-relaxed text-pretty">
+              <div className="lg:order-1 space-y-6">
+                <span className="eyebrow">Nossa Estrutura</span>
+                <h3 className="heading-md text-balance">
+                  Estrutura para Treinamento e Prática
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-pretty">
                   Na TREMA, os treinamentos acontecem em um ambiente técnico real, com oficina própria
                   totalmente equipada. Nossos alunos aprendem com os mesmos equipamentos, ferramentas
                   e componentes utilizados no dia a dia da manutenção de máquinas pesadas — garantindo
                   uma formação prática, imersiva e alinhada com as exigências do mercado.
                 </p>
-                <p className="text-surface-dark-foreground/70 leading-relaxed text-pretty">
+                <p className="text-muted-foreground leading-relaxed text-pretty">
                   São mais de 35 anos de experiência traduzidos em uma infraestrutura pensada
                   para formar profissionais prontos para atuar com segurança e eficiência.
                 </p>
@@ -139,7 +132,7 @@ const Courses = () => {
                   {structurePoints.map((item) => (
                     <li key={item.text} className="flex items-start gap-3">
                       <item.icon className="text-primary flex-shrink-0 mt-0.5" size={20} />
-                      <span className="text-sm text-surface-dark-foreground/80">{item.text}</span>
+                      <span className="text-sm text-foreground/80">{item.text}</span>
                     </li>
                   ))}
                 </ul>
