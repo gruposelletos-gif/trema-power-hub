@@ -6,7 +6,7 @@ import Products from "@/components/Products";
 import Contact from "@/components/Contact";
 
 const Index = () => (
-  <div className="-mt-16">
+  <div>
     <Hero />
     <About />
     <Services />

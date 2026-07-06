@@ -2,19 +2,46 @@ import { Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer className="bg-surface-dark text-surface-dark-foreground border-t border-primary/20">
-    <div className="container py-12">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+  <footer className="bg-surface-dark text-surface-dark-foreground">
+    {/* CTA band */}
+    <div className="border-b border-surface-dark-foreground/10">
+      <div className="container-wide py-16 grid md:grid-cols-2 gap-8 items-center">
+        <h3 className="font-display text-3xl sm:text-5xl uppercase leading-[0.98] tracking-wide">
+          Pronto para elevar sua operação?
+        </h3>
+        <div className="flex flex-wrap gap-3 md:justify-end">
+          <a
+            href="https://wa.me/5531993091735"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-7 py-4 bg-primary text-primary-foreground font-semibold text-xs uppercase tracking-[0.22em] rounded-full hover:brightness-105 hover:shadow-yellow transition-all duration-300"
+          >
+            <MessageCircle size={16} /> Falar no WhatsApp
+          </a>
+          <Link
+            to="/contato"
+            className="inline-flex items-center gap-2 px-7 py-4 border border-surface-dark-foreground/25 text-surface-dark-foreground font-semibold text-xs uppercase tracking-[0.22em] rounded-full hover:bg-surface-dark-foreground hover:text-surface-dark transition-all duration-300"
+          >
+            Fale conosco
+          </Link>
+        </div>
+      </div>
+    </div>
+
+    <div className="container-wide py-16">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="space-y-4">
-          <Link to="/" className="font-display text-2xl font-bold text-primary tracking-wider">TREMA</Link>
+          <Link to="/" className="font-display text-3xl tracking-[0.15em]">
+            TRE<span className="text-primary">M</span>A
+          </Link>
           <p className="text-sm text-surface-dark-foreground/60 leading-relaxed">
             Treinamento e Manutenção em Equipamentos Móveis. Desde 1988 formando profissionais de excelência.
           </p>
         </div>
 
         <div className="space-y-4">
-          <h4 className="font-display font-semibold uppercase tracking-wide text-sm">Navegação</h4>
-          <ul className="space-y-2">
+          <h4 className="font-display uppercase tracking-[0.22em] text-sm text-primary">Navegação</h4>
+          <ul className="space-y-2.5">
             {[
               { to: "/", label: "Início" },
               { to: "/sobre", label: "Sobre" },
@@ -32,8 +59,8 @@ const Footer = () => (
         </div>
 
         <div className="space-y-4">
-          <h4 className="font-display font-semibold uppercase tracking-wide text-sm">Serviços</h4>
-          <ul className="space-y-2 text-sm text-surface-dark-foreground/60">
+          <h4 className="font-display uppercase tracking-[0.22em] text-sm text-primary">Serviços</h4>
+          <ul className="space-y-2.5 text-sm text-surface-dark-foreground/60">
             <li>Treinamentos Técnicos</li>
             <li>Diagnóstico de Falhas</li>
             <li>Suporte Especializado</li>
@@ -42,7 +69,7 @@ const Footer = () => (
         </div>
 
         <div className="space-y-4">
-          <h4 className="font-display font-semibold uppercase tracking-wide text-sm">Contato</h4>
+          <h4 className="font-display uppercase tracking-[0.22em] text-sm text-primary">Contato</h4>
           <ul className="space-y-3 text-sm text-surface-dark-foreground/60">
             <li>
               <a href="tel:+553133344311" className="flex items-center gap-2 hover:text-primary transition-colors">
@@ -74,8 +101,8 @@ const Footer = () => (
       </div>
     </div>
     <div className="border-t border-surface-dark-foreground/10 py-6">
-      <div className="container text-center text-xs text-surface-dark-foreground/40 space-y-1">
-        <p>© {new Date().getFullYear()} TREMA – Treinamento e Manutenção em Equipamentos Móveis. Todos os direitos reservados.</p>
+      <div className="container-wide text-center text-xs text-surface-dark-foreground/40 space-y-1">
+        <p>© 2026 TREMA – Treinamento e Manutenção em Equipamentos Móveis. Todos os direitos reservados.</p>
         <p>Criado por{" "}
           <a href="https://selletos.com.br" target="_blank" rel="noopener noreferrer" className="text-surface-dark-foreground/60 hover:text-primary transition-colors underline underline-offset-2">
             selletos.com.br
