@@ -1,19 +1,38 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Award, BookOpen, TrendingUp, Wrench, Users, ShieldCheck, ArrowRight } from "lucide-react";
+import { Wrench, Users, ShieldCheck, Link2 } from "lucide-react";
 import oficinaImg from "@/assets/oficina.jpg";
+import manutencaoImg from "@/assets/courses/manutencao.jpg";
+import mecatronicaImg from "@/assets/courses/mecatronica.jpg";
+import arCondicionadoImg from "@/assets/courses/ar-condicionado.jpg";
+import operacaoImg from "@/assets/courses/operacao.jpg";
+import cargasImg from "@/assets/courses/cargas.jpg";
 
 const courses = [
-  { title: "Manutenção de Equipamentos Móveis", desc: "Curso completo com foco em manutenção preventiva e corretiva de escavadeiras, pás carregadeiras, retroescavadeiras e outros equipamentos." },
-  { title: "Mecatrônica Aplicada", desc: "Formação integrada em hidráulica, pneumática, elétrica e eletrônica para diagnóstico e reparo de sistemas complexos." },
-  { title: "Ar Condicionado Veicular", desc: "Capacitação em diagnóstico, manutenção e recarga de sistemas de climatização em veículos e máquinas." },
-  { title: "Operação de Equipamentos Pesados", desc: "Treinamento prático para operação segura, produtiva e em conformidade com normas regulamentadoras." },
-  { title: "Movimentação e Amarração de Cargas", desc: "Normas, técnicas e procedimentos para transporte e içamento seguro de cargas especiais." },
-];
-
-const benefits = [
-  { icon: Award, text: "Certificação reconhecida pelo mercado" },
-  { icon: BookOpen, text: "Conteúdo prático e atualizado" },
-  { icon: TrendingUp, text: "Alta empregabilidade para profissionais capacitados" },
+  {
+    title: "Manutenção de Equipamentos Móveis",
+    desc: "Curso completo com foco em manutenção preventiva e corretiva de escavadeiras, pás carregadeiras, retroescavadeiras e outros equipamentos.",
+    image: manutencaoImg,
+  },
+  {
+    title: "Mecatrônica Aplicada",
+    desc: "Formação integrada em hidráulica, pneumática, elétrica e eletrônica para diagnóstico e reparo de sistemas complexos.",
+    image: mecatronicaImg,
+  },
+  {
+    title: "Ar Condicionado Veicular",
+    desc: "Capacitação em diagnóstico, manutenção e recarga de sistemas de climatização em veículos e máquinas.",
+    image: arCondicionadoImg,
+  },
+  {
+    title: "Operação de Equipamentos Pesados",
+    desc: "Treinamento prático para operação segura, produtiva e em conformidade com normas regulamentadoras.",
+    image: operacaoImg,
+  },
+  {
+    title: "Movimentação e Amarração de Cargas",
+    desc: "Normas, técnicas e procedimentos para transporte e içamento seguro de cargas especiais.",
+    image: cargasImg,
+  },
 ];
 
 const structurePoints = [
@@ -54,49 +73,60 @@ const Courses = () => {
           </p>
         </div>
 
-        {/* Courses list + Benefits */}
-        <div className={`grid lg:grid-cols-3 gap-8 mb-28 ${visible ? "animate-fade-up delay-200" : "opacity-0"}`}>
-          <div className="lg:col-span-2 space-y-3">
-            {courses.map((course, i) => (
-              <div
-                key={course.title}
-                className="group bg-card border border-border p-7 rounded-2xl hover:border-foreground hover:shadow-soft transition-all duration-300"
-              >
-                <div className="flex items-start gap-5">
-                  <span className="flex-shrink-0 font-display text-3xl text-primary tabular-nums w-14">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="space-y-2 flex-1">
-                    <h4 className="font-display text-xl uppercase leading-tight">{course.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{course.desc}</p>
-                  </div>
-                  <ArrowRight size={18} className="text-foreground/30 group-hover:text-primary group-hover:translate-x-1 transition-all mt-2" />
+        {/* Course cards grid */}
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-28 ${
+            visible ? "animate-fade-up delay-200" : "opacity-0"
+          }`}
+        >
+          {courses.map((course) => (
+            <article
+              key={course.title}
+              className="group flex flex-col h-full bg-card border border-border rounded-2xl overflow-hidden hover:shadow-elevated hover:-translate-y-1 transition-all duration-300"
+            >
+              <div className="w-full h-[240px] overflow-hidden bg-muted">
+                <img
+                  src={course.image}
+                  alt={course.title}
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              <div className="flex flex-col flex-1 p-8 text-center">
+                <h3 className="font-display uppercase text-center text-[30px] leading-[1.1] font-semibold min-h-[72px] flex items-center justify-center">
+                  {course.title}
+                </h3>
+
+                <p
+                  className="mt-4 text-sm text-muted-foreground leading-relaxed overflow-hidden"
+                  style={{
+                    display: "-webkit-box",
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: "vertical",
+                  }}
+                >
+                  {course.desc}
+                </p>
+
+                <div className="mt-auto pt-8 flex justify-center">
+                  <a
+                    href={`https://wa.me/5531993091735?text=${encodeURIComponent(
+                      `Olá! Gostaria de saber mais sobre o curso: ${course.title}`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Saiba mais sobre ${course.title}`}
+                    className="inline-flex items-center justify-center w-12 h-12 bg-primary text-primary-foreground rounded-md hover:brightness-105 hover:shadow-yellow active:scale-95 transition-all duration-200"
+                  >
+                    <Link2 size={22} />
+                  </a>
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className="space-y-6 lg:sticky lg:top-28 lg:self-start">
-            <div className="bg-foreground text-background p-8 rounded-2xl space-y-6 shadow-elevated">
-              <h3 className="font-display text-2xl uppercase tracking-wide">Por que estudar na TREMA?</h3>
-              <ul className="space-y-4">
-                {benefits.map((b) => (
-                  <li key={b.text} className="flex items-start gap-3">
-                    <b.icon className="text-primary flex-shrink-0 mt-0.5" size={20} />
-                    <span className="text-sm text-background/80">{b.text}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="https://wa.me/5531993091735?text=Olá! Gostaria de me inscrever em um curso."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center px-6 py-4 bg-primary text-primary-foreground font-semibold text-xs uppercase tracking-[0.2em] rounded-full hover:brightness-105 active:scale-[0.97] transition-all duration-200"
-              >
-                Quero me inscrever
-              </a>
-            </div>
-          </div>
+            </article>
+          ))}
         </div>
 
         {/* Estrutura para Treinamento */}
