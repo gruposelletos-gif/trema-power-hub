@@ -126,7 +126,7 @@ const Navbar = () => {
                 href="https://wa.me/5531993091735"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center px-5 py-3 rounded-full text-xs font-semibold uppercase tracking-[0.2em] bg-primary text-primary-foreground"
+                className="block text-center px-5 py-3 rounded-full text-sm font-semibold uppercase tracking-[0.2em] bg-primary text-primary-foreground"
               >
                 Fale conosco
               </a>
