@@ -44,7 +44,7 @@ const Navbar = () => {
             src={tremaLogo.url}
             alt="TREMA - Treinamento e Manutenção em Equipamentos Móveis"
             className={`h-12 md:h-14 w-auto object-contain transition-all duration-300 ${
-              solid ? "" : "invert brightness-0 [filter:invert(1)_brightness(2)]"
+              solid ? "" : "[filter:invert(1)_brightness(2)]"
             }`}
           />
         </Link>
