@@ -21,10 +21,6 @@ import imgRegulador from "@/assets/products/regulador-pressao.jpeg";
 import imgSacaPolia from "@/assets/products/saca-polia.jpeg";
 import imgVedacoes from "@/assets/products/vedacoes-geral.jpeg";
 import imgAcumuladores from "@/assets/products/acumuladores-nitrogenio.jpeg";
-import imgShuttle from "@/assets/products/dispositivo-shuttle.jpeg";
-import imgCavalete from "@/assets/products/cavalete-selagem.jpeg";
-import imgBombas from "@/assets/products/bombas-hidraulicas.jpeg";
-import imgUnidade from "@/assets/products/unidade-hidraulica.jpeg";
 
 const products = [
   {
@@ -126,26 +122,6 @@ const products = [
     name: "Acumuladores a Nitrogênio",
     desc: "Venda e/ou manutenção de acumuladores a nitrogênio (N²) empregados em diferentes circuitos hidráulicos.",
     image: imgAcumuladores,
-  },
-  {
-    name: 'Dispositivo atuador / desviador de "Shuttle"',
-    desc: "Dispositivo dotado de um cilindro pneumático de dupla ação, controlado por uma válvula direcional",
-    image: imgShuttle,
-  },
-  {
-    name: "Cavalete para selagem de bombas centrifugas",
-    desc: "Controle da pressão de selagem das bombas centrífugas que bombeiam a polpa do minério de ferro.",
-    image: imgCavalete,
-  },
-  {
-    name: "Bombas Hidráulicas",
-    desc: "Bombas hidráulicas diversos modelos. Palhetas, Pistão, Engrenagem e etc.",
-    image: imgBombas,
-  },
-  {
-    name: "Unidade Hidráulica",
-    desc: "Unidade Hidráulica para Sistema de Jigagem",
-    image: imgUnidade,
   },
 ];
 
