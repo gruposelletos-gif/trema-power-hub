@@ -129,7 +129,7 @@ const Courses = () => {
               playsInline
               preload="auto"
             >
-              <source src="/videos/treinamento-1.mp4" type="video/mp4" />
+              <source src="/__l5e/assets-v1/1cd421d0-bb51-4d51-bfe2-c3e67f792188/treinamento-1.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.
             </video>
           </div>
