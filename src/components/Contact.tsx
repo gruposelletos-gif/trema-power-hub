@@ -5,9 +5,9 @@ import { useState } from "react";
 const PHONE = "(31) 3334-4311";
 const WHATSAPP = "(31) 9 9309-1735";
 const WHATSAPP_LINK = "https://wa.me/5531993091735";
-const EMAIL = "trema@treamt.com.br";
-const INSTAGRAM = "@trema.treinamento.manutencao";
-const INSTAGRAM_LINK = "https://instagram.com/trema.treinamento.manutencao";
+const EMAIL = "trema@tremat.com.br";
+const INSTAGRAM = "@tremat.oficial";
+const INSTAGRAM_LINK = "https://instagram.com/tremat.oficial";
 const ADDRESS = "Rua Emília Silva Freitas, 360, Novo Eldorado, Contagem/MG, CEP: 32.341-500";
 const MAPS_LINK = "https://www.google.com/maps/search/?api=1&query=Rua+Em%C3%ADlia+Silva+Freitas+360+Novo+Eldorado+Contagem+MG";
 

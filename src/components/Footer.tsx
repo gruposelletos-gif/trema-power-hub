@@ -82,13 +82,13 @@ const Footer = () => (
               </a>
             </li>
             <li>
-              <a href="mailto:trema@treamt.com.br" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail size={14} className="text-primary" /> trema@treamt.com.br
+              <a href="mailto:trema@tremat.com.br" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Mail size={14} className="text-primary" /> trema@tremat.com.br
               </a>
             </li>
             <li>
-              <a href="https://instagram.com/trema.treinamento.manutencao" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Instagram size={14} className="text-primary" /> @trema.treinamento.manutencao
+              <a href="https://instagram.com/tremat.oficial" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Instagram size={14} className="text-primary" /> @tremat.oficial
               </a>
             </li>
             <li>
