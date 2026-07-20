@@ -34,7 +34,7 @@ const Navbar = () => {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="container-wide flex items-center justify-between h-20">
+      <div className="container-wide flex items-center justify-between h-24 md:h-28">
         <Link
           to="/"
           className="flex items-center"
@@ -43,7 +43,7 @@ const Navbar = () => {
           <img
             src={tremaLogo.url}
             alt="TREMA - Treinamento e Manutenção em Equipamentos Móveis"
-            className={`h-12 md:h-14 w-auto object-contain transition-all duration-300 ${
+            className={`h-20 md:h-24 lg:h-28 w-auto object-contain transition-all duration-300 ${
               solid ? "" : "[filter:invert(1)_brightness(2)]"
             }`}
           />
