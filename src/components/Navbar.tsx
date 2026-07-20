@@ -111,7 +111,7 @@ const Navbar = () => {
                 <Link
                   to={link.to}
                   onClick={() => setOpen(false)}
-                  className={`block px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] transition-colors ${
+                  className={`block px-6 py-4 text-base font-semibold uppercase tracking-[0.2em] transition-colors ${
                     pathname === link.to
                       ? "text-primary bg-primary/5"
                       : "text-foreground/70 hover:text-primary"
