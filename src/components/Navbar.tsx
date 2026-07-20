@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import tremaLogo from "@/assets/trema-logo.png.asset.json";
 
 const navLinks = [
   { to: "/", label: "Início" },
@@ -36,11 +37,16 @@ const Navbar = () => {
       <div className="container-wide flex items-center justify-between h-20">
         <Link
           to="/"
-          className={`font-display text-3xl tracking-[0.15em] transition-colors duration-300 ${
-            solid ? "text-foreground" : "text-white"
-          }`}
+          className="flex items-center"
+          aria-label="TREMA"
         >
-          TRE<span className="text-primary">M</span>A
+          <img
+            src={tremaLogo.url}
+            alt="TREMA - Treinamento e Manutenção em Equipamentos Móveis"
+            className={`h-12 md:h-14 w-auto object-contain transition-all duration-300 ${
+              solid ? "" : "[filter:invert(1)_brightness(2)]"
+            }`}
+          />
         </Link>
 
         {/* Desktop */}
