@@ -1,5 +1,6 @@
 import { Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import tremaLogo from "@/assets/trema-logo.png.asset.json";
 
 const Footer = () => (
   <footer className="bg-surface-dark text-surface-dark-foreground">
@@ -31,8 +32,12 @@ const Footer = () => (
     <div className="container-wide py-16">
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="space-y-4">
-          <Link to="/" className="font-display text-3xl tracking-[0.15em]">
-            TRE<span className="text-primary">M</span>A
+          <Link to="/" className="inline-block" aria-label="TREMA">
+            <img
+              src={tremaLogo.url}
+              alt="TREMA - Treinamento e Manutenção em Equipamentos Móveis"
+              className="h-16 w-auto object-contain [filter:invert(1)_brightness(2)]"
+            />
           </Link>
           <p className="text-sm text-surface-dark-foreground/60 leading-relaxed">
             Treinamento e Manutenção em Equipamentos Móveis. Desde 1988 formando profissionais de excelência.
