@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 import imgKitTurbo from "@/assets/products/kit-turbo-lubrificacao.png";
 import imgKitSuperUtil from "@/assets/products/kit-super-util.jpeg";
 import imgKitDigital from "@/assets/products/kit-digital.jpeg";
-import imgKitCommonRail from "@/assets/products/kit-common-rail.jpeg";
+
 import imgDispositivoPreCarga from "@/assets/products/dispositivo-pre-carga.jpeg";
 import imgManometro from "@/assets/products/manometro-r134a.jpeg";
 import imgTermometro from "@/assets/products/termometro-digital.jpeg";
@@ -37,11 +37,6 @@ const products = [
     name: "Kit digital para tomadas de pressões hidráulicas",
     desc: "Kit composto por manômetro digital, microtubos para alta pressão e adaptadores diversos",
     image: imgKitDigital,
-  },
-  {
-    name: "Kit common rail",
-    desc: "Ferramenta especial para medir as pressões e avaliar o desempenho das bombas do sistema de injeção diesel Common Rail.",
-    image: imgKitCommonRail,
   },
   {
     name: "Dispositivo universal para pré carga em acumuladores",
